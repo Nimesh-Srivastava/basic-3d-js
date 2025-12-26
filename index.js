@@ -2,8 +2,8 @@ const BACKGROUND = "black";
 const FOREGROUND = "yellow";
 
 console.log(game);
-game.width = 800;
-game.height = 600;
+game.width = 700;
+game.height = 700;
 
 const ctx = game.getContext("2d");
 console.log(ctx);
@@ -14,15 +14,15 @@ function clear() {
 }
 
 function point({ x, y }) {
-  const s = 10;
+  const s = 20;
   ctx.fillStyle = FOREGROUND;
-  ctx.fillRect(x, y, s, s);
+  ctx.fillRect(x - s / 2, y - s / 2, s, s);
 }
 
 function project(p) {
   return {
     x: ((p.x + 1) / 2) * game.width,
-    y: ((p.y + 1) / 2) * game.height,
+    y: (1 - (p.y + 1) / 2) * game.height,
   };
 }
 
