@@ -13,5 +13,11 @@ function clear() {
   ctx.fillRect(0, 0, game.width, game.height);
 }
 
-ctx.fillStyle = FOREGROUND;
-ctx.fillRect(0, 0, 100, 100);
+function point(x, y) {
+  const s = 10;
+  ctx.fillStyle = FOREGROUND;
+  ctx.fillRect(x, y, s, s);
+}
+
+clear();
+point(100, 100);
