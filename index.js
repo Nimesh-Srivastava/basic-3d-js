@@ -23,6 +23,7 @@ function point({ x, y }) {
 
 // define a line
 function line(p1, p2) {
+  ctx.lineWidth = 3;
   ctx.strokeStyle = FOREGROUND;
   ctx.beginPath();
   ctx.moveTo(p1.x, p1.y);
@@ -82,6 +83,10 @@ const vs = [
 const eds = [
   [0, 1, 2, 3],
   [4, 5, 6, 7],
+  [0, 4],
+  [1, 5],
+  [2, 6],
+  [3, 7],
 ];
 
 let dz = 1;
@@ -96,9 +101,9 @@ function frame() {
   clear();
 
   // render the vertices
-  for (const v of vs) {
-    point(display(project(translate_z(rotate_y(v, angle), dz))));
-  }
+  // for (const v of vs) {
+  //   point(display(project(translate_z(rotate_y(v, angle), dz))));
+  // }
 
   // render the edges
   for (const e of eds) {
